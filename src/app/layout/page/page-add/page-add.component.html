@@ -1,0 +1,77 @@
+<div class="container-fluid">
+	<h1 class="h3 mb-2 text-gray-800">Add Page</h1>
+
+	<div class="card shadow mb-4">
+		<div class="card-body">
+
+			<form (ngSubmit)="onSubmit()" #f="ngForm">
+				<div class="form-group">
+					<label>Title*</label>
+					<input type="text" class="form-control" name="title" ngModel required #title="ngModel"
+						(blur)="generateSlug()">
+					<small class="form-text text-danger" *ngIf="!title.valid && title.touched">This field is required.</small>
+				</div>
+				<div class="form-group">
+					<label>Slug*</label>
+					<input type="text" class="form-control" name="slug" ngModel readonly>
+				</div>
+				<div class="form-group">
+					<label>Content*</label>
+					<textarea class="form-control" name="body" ngModel required></textarea>
+				</div>
+				<div class="form-group">
+					<label>Sort Order</label>
+					<input type="number" class="form-control" name="weight" [ngModel]="weight" required>
+				</div>
+
+				<div class="form-group">
+					<label>Status</label>
+					<select class="form-control" name="status" ngModel>
+						<option value=""></option>
+						<option *ngFor="let val of selStatus; let i = index" [value]="i">
+							{{ val }}
+						</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Color</label>
+					<select class="form-control" multiple name="color" ngModel>
+						<option value=""></option>
+						<option *ngFor="let val of selColor" [value]="val.code">
+							{{ val.name }}
+						</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>Gender</label>
+					<div class="form-check" *ngFor="let val of gender; let i = index">
+						<input class="form-check-input" type="radio" name="gender" id="gender_{{ val }}" ngModel [value]="i">
+						<label class="form-check-label" for="gender_{{ val }}">{{ val }}</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Term & Conditions</label>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="terms" id="terms" [ngModel]="terms">
+						<label class="form-check-label" for="terms">I agree to accept Term & Conditions</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Language</label>
+					<div class="form-check" *ngFor="let val of checkLang; let i = index">
+						<input class="form-check-input" type="checkbox" name="lang" id="lang_{{ i }}" ngModel [value]="val.code">
+						<label class="form-check-label" for="lang_{{ i }}">{{ val.name }}</label>
+					</div>
+				</div>
+
+
+
+				<button class="btn btn-primary" type="submit">Submit</button>
+				<!-- [disabled]="!f.valid" -->
+			</form>
+		</div>
+	</div>
+
+</div>
