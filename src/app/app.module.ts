@@ -19,27 +19,27 @@ import { ProductListComponent } from './layout/product/product-list/product-list
 import { ProductAddComponent } from './layout/product/product-add/product-add.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		PageAddComponent,
-		PageListComponent,
-		HeaderComponent,
-		FooterComponent,
-		SlidebarComponent,
-		HomeComponent,
-		DashboardComponent,
-		LoginComponent,
-		ProductListComponent,
-		ProductAddComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		FormsModule,
-		ReactiveFormsModule,
-		HttpClientModule
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    PageAddComponent,
+    PageListComponent,
+    HeaderComponent,
+    FooterComponent,
+    SlidebarComponent,
+    HomeComponent,
+    DashboardComponent,
+    LoginComponent,
+    ProductListComponent,
+    ProductAddComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

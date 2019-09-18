@@ -57,9 +57,9 @@
 
 				<div class="form-group">
 					<label>Language</label>
-					<div class="form-check" *ngFor="let val of checkLang; let i = index">
-						<input class="form-check-input" type="checkbox" formControlName="lang" id="lang_{{ i }}" [value]="val.code">
-						<label class="form-check-label" for="lang_{{ i }}">{{ val.name }}</label>
+					<div class="form-check" *ngFor="let lang of langs.controls; let i = index">
+						<input class="form-check-input" type="checkbox" [formControl]="lang" id="lang_{{ i }}">
+						<label class="form-check-label" for="lang_{{ i }}">{{checkLang[i].name}}</label>
 					</div>
 				</div>
 
